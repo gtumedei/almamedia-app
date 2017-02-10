@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AlmaMedia</title>
+<link rel="stylesheet" type="text/css" href="default.css">
+<script src="jquery-1.9.1.js"></script>
+<script src="datatypes.js"></script>
+<script src="popup.js"></script>
+</head>
+<body>
+<div id="info">Oops! Qualcosa non torna!<br /><br />
+L'applicazione non riesce a leggere il contenuto della pagina.<br /><br />
+Perfavore segnala questo bug a:<br />
+riccardo.trebbi2@gmail.com</div>
+<div id="results">
+	<table>
+		<tr>
+			<th scope="col">Media (30) </th>
+			<td id="media"></td>
+		</tr>
+		<tr>
+			<th scope="col">Media (110)</th>
+			<td id="media_centodieci"></td>
+		</tr>
+		<tr>
+			<th scope="col">CFU</th>
+			<td  id="cfu"></td>
+		</tr>
+	</table>
+	<hr>
+	<form action="">
+		<table class="input_table">
+			<caption>
+			Aggiungi Esami
+			</caption>
+			<tr>
+				<th scope="col">Voto</th>
+				<th scope="col">Crediti</th>
+				<th class="third_column" scope="col"></th>
+			</tr>
+			<tr class="new_exam">
+				<td><input name="grade" type="text" maxlength="2" ></td>
+				<td><input name="credits" type="text" maxlength="2" ></td>
+				<td class="third_column"><a class="remove" href=""></a></td>
+			</tr>
+		</table>
+		<a class="button" id="add" href="">+</a> 
+		<a class="button" id="calcola" href="">Calcola</a> 
+		<a class="button" id="reset" href="">Reset</a>
+	</form>
+	<div id="messages">
+		<div id="error"></div>
+		<div id="warning"></div>
+	</div>
+</div>
+</body>
+</html>
