@@ -2,164 +2,260 @@
 /* CSS Document */
 
 body {
-	font-weight: bold;
-	font-size: 12px;
-	font-family: Arial, sans-serif;
-	color: #585858;
-	width: 250px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #212529;
+    width: 450px;
 }
 
-/* General layout tables */
-table {
-	table-layout: fixed;
-	color: #333333;
-	border-width: 1px;
-	border-color: #666666;
-	border-collapse: collapse;
-	width: 100%;
+* {
+    box-sizing: border-box;
 }
 
-table th {
-	border-width: 1px;
-	padding: 8px 5px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
 }
 
-table td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
-	text-align: center;
+.main-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.statistics {
+    padding: 20px 0;
+    display: flex;
+    margin-left: -5px;
+    margin-right: -5px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    margin-bottom: 20px;
+}
+
+.statistics .col {
+    max-width: 33%;
+    flex: 0 0 33%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.statistics .box {
+    color: #fff;
+    border-radius: 3px;
+}
+
+.statistics .box.media {
+    background-color: #1BC98E;
+}
+
+.statistics .box.media_centodieci {
+    background-color: #E64759;
+}
+
+.statistics .box.cfu {
+    background-color: #9F86FF;
+}
+
+.statistics .box .content {
+    padding: 15px;
+    text-align: center;
+}
+
+.statistics .box .content .header {
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.statistics .box .content h2 {
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: 300;
+}
+
+.statistics .box .content .small-label {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    overflow: visible;
+}
+
+input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
 /* Add exam table */
 
-.input_table caption {
-	padding: 5px;
-	border-color: #666666;
-	font-weight: bold;
-	font-size: 1.1em;
-	margin-left: -1px; /* Fix FF 1px issue */
+h2 {
+    margin: 5px 0;
+    text-align: center;
 }
 
-.input_table td {
-	padding: 0px;
-	height: 2em;
+.subheader {
+    display: block;
+    color: #6c757d;
+    text-align: center;
+    padding: 0 20px;
 }
 
-.third_column {
-	width: 15%;
-}
-
-.input_table input {
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	border-style: hidden;
-	text-align: center;
-}
-
-.input_table td > a {
-	width: 100%;
-	height: 100%;
-	display: block;
-	background: url(icons/close.png) no-repeat;
-	background-position: center;
+.input_table {
+    margin: 20px 0;
 }
 
 .error_field {
-	border: 2px solid #D8000C;
+    border: 2px solid #D8000C;
 }
 
 .error_field input {
-	background-color: #FF9494;
+    background-color: #FF9494;
 }
 
-/* Buttons (anchor) style */
-a.button {
-    color: #333;
-    text-decoration: none;
-    padding: 5px 15px;
-    position: relative;
+.btn {
+    cursor: pointer;
     display: inline-block;
-    text-shadow: 0 1px 0 #fff;
-    -webkit-transition: border-color .218s;
-    -moz-transition: border .218s;
-    -o-transition: border-color .218s;
-    transition: border-color .218s;
-    background: #f3f3f3;
-    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
-    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
-    border: solid 1px #dcdcdc;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-	width: 85px;
-	text-align: center;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-a.button:hover {
-    color: #333;
-    border-color: #999;
-    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); 
-	-webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+.btn.small {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
 }
 
-a#calcola {
-	margin-right: 10px;	
+.btn.primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
-a#add {
-	display: block;
-	font-size: 14px;
-	margin-top: 5px;
-	margin-bottom: 20px;
-	padding: 3px 20px;
-	width: 15%;
+.btn.primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn.primary:active {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+.btn.secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn.secondary:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn.secondary:active {
+    color: #fff;
+    background-color: #545b62;
+    border-color: #4e555b;
+}
+
+.btn.light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn.light:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn.light:active {
+    color: #fff;
+    background-color: #545b62;
+    border-color: #4e555b;
+}
+
+.trash-icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.add-icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 15px;
 }
 
 div.controls {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 #messages {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 #error {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	color: #D8000C;
-	background-color: #FFBABA;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    color: #D8000C;
+    background-color: #FFBABA;
 }
 
 #warning {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	color: #9F6000;
-	background-color: #FEEFB3;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    color: #9F6000;
+    background-color: #FEEFB3;
 }
 
 #info {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #666666;
-	padding: 1em;
-	display: block;
-	font-size: 14px;
-	font-weight: normal;
-	background-color: #FFBABA;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+    padding: 1em;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    background-color: #FFBABA;
 }
 
 .tooltip {
-	font: inherit;
+    font: inherit;
 }

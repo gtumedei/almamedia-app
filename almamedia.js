@@ -15,6 +15,17 @@ function getExamRows() {
     return $("table.iceDataTblOutline").find("tr.riga0, tr.riga1");
 }
 
+function getStudentName() {
+    try {
+        var titoloContent = $(".titoloPagina").text();
+        var start = titoloContent.indexOf('-') + 1;
+        var end = titoloContent.indexOf('(Matr.');
+        return titoloContent.substr(start, end - start).trim();
+    } catch(err) {
+        return 'Studente'
+    }
+}
+
 function getCareer() {
 
     var rows = getExamRows();
@@ -22,12 +33,14 @@ function getCareer() {
     if (rows.length == 0)
         return null;
 
-    var career = new Career();
+    var studentName = getStudentName();
+    console.log(studentName)
+    var career = new Career(studentName);
     for (var i = 0; i < rows.length; i++) {
 
         var columns = $(rows.get(i)).children(".colonna");
 
-        if(columns != null && columns.length >= 6) {
+        if (columns != null && columns.length >= 6) {
             /*var name = $(columns.get(2)).html().trim();*/
             var credits = $(columns.get(4)).html();
             var grade = $(columns.get(5)).html();
@@ -51,7 +64,7 @@ chrome.extension.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.execute == "calculate") {
             var career = getCareer();
-            sendResponse({career: career});
+            sendResponse({ career: career });
         }
     });
 

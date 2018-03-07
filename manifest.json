@@ -4,9 +4,9 @@
   "name": "AlmaMedia",
   "description": "Calcola la tua media pesata da AlmaEsami con un semplice click!",
   "version": "2.5.2",
-  "icons": {"16": "icon16.png", 
-			"48": "icon48.png",
-            "128": "icon128.png" },
+  "icons": {"16": "icon32.png",
+			"48": "icon96.png",
+            "128": "icon256.png" },
   "permissions": [
 	"https://*.unibo.it/*"
 	],
@@ -16,9 +16,9 @@
   "page_action" :
   {
       "default_name": "AlmaMedia",
-      "default_icon": "icon128.png",
+      "default_icon": "icon256.png",
       "default_popup": "popup.html",
-	  "default_title": "Clicca qui per sapere la tua media"
+	  "default_title": "Clicca qui per conoscere la tua media"
   },
   "content_scripts": [
 	{

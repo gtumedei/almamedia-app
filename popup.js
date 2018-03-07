@@ -171,10 +171,11 @@ function resetRow(elem) {
 function resetCareer() {
 	if(origCareer == null)
 		showError("E' successo qualcosa di brutto! Prova a ricaricare la pagina.");
-	career = getCareer(origCareer);
+	career = cloneCareer(origCareer);
 }
 
 function updateData(){
+    $("#studentName").text(career.name);
 	$("#media").html(career.getMedia());
 	$("#media_centodieci").html(career.getMediaCentoDieci());
 	$("#cfu").html(career.getCFU());
@@ -185,7 +186,7 @@ function onDataReceived(response){
 		showInfo();
 	}
 	else{
-		origCareer = getCareer(response.career);
+		origCareer = cloneCareer(response.career);
 		resetCareer();
 		showResults();
 		updateData();

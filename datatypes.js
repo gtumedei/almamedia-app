@@ -25,10 +25,9 @@ Exam.prototype.isGradeNumber = function() {
 
 
 /*********************** Career ******************************/
-function Career() {
-	
+function Career(name) {
+	this.name = name;
 	this.exams = new Array();
-	
 }
 
 Career.prototype.addExam = function(exam) {
@@ -66,12 +65,11 @@ Career.prototype.getMediaCentoDieci = function() {
 
 // We need this because JSON cannot pass object.
 // Therefore we must recreate another career object.
-function getCareer(careerObject) {
-	var career = new Career();
+function cloneCareer(careerObject) {
+	var career = new Career(careerObject.name);
 	for(var i = 0; i < careerObject.exams.length; ++i){
 		var exam = new Exam(careerObject.exams[i].credits);
 		exam.setGrade(careerObject.exams[i].grade);
-		
 		career.addExam(exam);
 	}
 	return career;
