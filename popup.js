@@ -195,9 +195,9 @@ function onDataReceived(response){
 
 function addNewExamRow(){
 	// Columns
-	var gradeInput = $("<input>").attr("name", "grade").attr("type", "text").attr("maxlength", "2");
-	var creditsInput = $("<input>").attr("name", "credits").attr("type", "text").attr("maxlength", "2");
-	var removeButton = $("<a>").addClass("remove").attr("href", "");
+	var gradeInput = $(".grade-input").first().clone().val("");
+	var creditsInput = $(".credits-input").first().clone().val("");
+	var removeButton = $(".remove").first().clone();
 	
 	// Row
 	var row = $("<tr>").addClass("new_exam").append($("<td>").append(gradeInput));
