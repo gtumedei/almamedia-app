@@ -30,23 +30,23 @@
             </div>
         </div>
         <div class="col">
-            <div class="box media_centodieci">
-                <div class="content">
-                    <span class="header">Voto Laurea</span>
-                    <h2>
-                        <span id="media_centodieci"></span>
-                        <small class="small-label"> / 110</small>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="col">
             <div class="box cfu">
                 <div class="content">
                     <span class="header">Crediti</span>
                     <h2>
                         <span id="cfu"></span>
                         <small class="small-label"> CFU</small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box media_centodieci">
+                <div class="content">
+                    <span class="header">Voto Laurea</span>
+                    <h2>
+                        <span id="media_centodieci"></span>
+                        <small class="small-label"> / 110</small>
                     </h2>
                 </div>
             </div>
@@ -72,14 +72,17 @@
                     </td>
                 </tr>
             </table>
-            <button style="margin-top: 10px;" type="button" id="add" class="btn light small">
-                <svg aria-hidden="true" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 448 512" class="add-icon">
-                    <path fill="currentColor"
-                          d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"
-                          class=""></path>
-                </svg>
-            </button>
+            <div class="add-btn-panel">
+                <!--<div class="spacer"></div>-->
+                <button style="margin-top: 10px;" type="button" id="add" class="btn light small">
+                    <svg aria-hidden="true" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512" class="add-icon">
+                        <path fill="currentColor"
+                              d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"
+                              class=""></path>
+                    </svg>
+                </button>
+            </div>
         </div>
         <button class="btn primary" id="calcola">Calcola</button>
         <button class="btn secondary" id="reset">Reset</button>

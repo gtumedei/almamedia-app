@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .statistics .box.media_centodieci {
-    background-color: #E64759;
+    background-color: #5087ff;
 }
 
 .statistics .box.cfu {
@@ -211,6 +211,14 @@ h2 {
     height: 15px;
     margin: 0 15px;
     cursor: pointer;
+}
+
+.add-btn-panel {
+    display: flex;
+}
+
+.add-btn-panel .spacer {
+    flex: 1 auto;
 }
 
 .add-icon {
