@@ -4,21 +4,22 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>AlmaMedia</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="default.css">
-    <script src="jquery-1.9.1.js"></script>
-    <script src="datatypes.js"></script>
-    <script src="popup.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="datatypes.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
 </head>
 <body>
-<div id="info">Oops! Qualcosa non torna!<br/><br/>
+<div class="alert alert-danger" id="info">Oops! Qualcosa non torna!<br/><br/>
     L'applicazione non riesce a leggere il contenuto della pagina.<br/><br/>
     Perfavore segnala questo bug a:<br/>
     riccardo.trebbi2@gmail.com
 </div>
 <div id="results">
-    <h1 class="main-title">Benvenuto <span id="studentName"></span>!</h1>
-    <div class="statistics">
-        <div class="col">
+    <h1 class="h4 text-center mb-4">Benvenuto <span id="studentName"></span>!</h1>
+    <div class="statistics row mb-4">
+        <div class="col-4">
             <div class="box media">
                 <div class="content">
                     <span class="header">Voto attuale</span>
@@ -29,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-4">
             <div class="box cfu">
                 <div class="content">
                     <span class="header">Crediti</span>
@@ -40,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-4">
             <div class="box media_centodieci">
                 <div class="content">
                     <span class="header">Voto Laurea</span>
@@ -52,41 +53,57 @@
             </div>
         </div>
     </div>
-    <h2>Prossimi esami</h2>
-    <span class="subheader">Inserisci voto e crediti dei prossimi esami e vedi come cambia la tua media in tempo reale!</span>
-    <form action="">
-        <div class="input_table">
-            <table>
-                <tr class="new_exam">
-                    <td><input class="grade-input" name="grade" type="text" placeholder="Voto" maxlength="2"></td>
-                    <td><input class="credits-input" name="credits" type="text" placeholder="Crediti" maxlength="2"></td>
-                    <td class="third_column">
-                        <!--<a class="remove" href=""></a>-->
-                        <svg aria-hidden="true" data-prefix="far" data-icon="trash-alt" role="img"
-                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                             class="trash-icon remove">
-                            <path fill="currentColor"
-                                  d="M192 188v216c0 6.627-5.373 12-12 12h-24c-6.627 0-12-5.373-12-12V188c0-6.627 5.373-12 12-12h24c6.627 0 12 5.373 12 12zm100-12h-24c-6.627 0-12 5.373-12 12v216c0 6.627 5.373 12 12 12h24c6.627 0 12-5.373 12-12V188c0-6.627-5.373-12-12-12zm132-96c13.255 0 24 10.745 24 24v12c0 6.627-5.373 12-12 12h-20v336c0 26.51-21.49 48-48 48H80c-26.51 0-48-21.49-48-48V128H12c-6.627 0-12-5.373-12-12v-12c0-13.255 10.745-24 24-24h74.411l34.018-56.696A48 48 0 0 1 173.589 0h100.823a48 48 0 0 1 41.16 23.304L349.589 80H424zm-269.611 0h139.223L276.16 50.913A6 6 0 0 0 271.015 48h-94.028a6 6 0 0 0-5.145 2.913L154.389 80zM368 128H80v330a6 6 0 0 0 6 6h276a6 6 0 0 0 6-6V128z"
-                                  class=""></path>
-                        </svg>
-                    </td>
-                </tr>
-            </table>
-            <div class="add-btn-panel">
-                <!--<div class="spacer"></div>-->
-                <button style="margin-top: 10px;" type="button" id="add" class="btn light small">
-                    <svg aria-hidden="true" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 448 512" class="add-icon">
-                        <path fill="currentColor"
-                              d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"
-                              class=""></path>
-                    </svg>
-                </button>
+
+    <hr>
+
+    <h2 class="h5 text-center mb-2">Prossimi esami</h2>
+    <p class="text-muted text-center m-0">Scopri come può cambiare la tua media in
+        tempo reale!</p>
+
+    <form class="exam-form mt-4" novalidate>
+        <div class="rows">
+            <div class="form-row exam-row mb-2">
+                <div class="col">
+                    <input type="number"
+                           name="grade"
+                           class="grade-input form-control form-control-sm"
+                           min="18" max="30"
+                           placeholder="Voto"
+                           required>
+                    <div class="invalid-feedback">
+                        Inserisci il voto (18-30).
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="number" name="credits"
+                           class="credits-input form-control form-control-sm"
+                           min="0"
+                           placeholder="Crediti"
+                           required>
+                    <div class="invalid-feedback">
+                        Inserisci i crediti.
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="close remove-btn" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             </div>
         </div>
-        <button class="btn primary" id="calcola">Calcola</button>
-        <button class="btn secondary" id="reset">Reset</button>
+        <button title="Aggiungi un nuovo esame" class="btn btn-light btn-sm mb-4" type="button" id="add">
+            Add
+        </button>
+        <div class="row">
+            <div class="col-auto pr-0">
+                <button type="submit" class="btn btn-primary" id="calcola">Calcola</button>
+            </div>
+            <div class="col-auto pl-2">
+                <button type="reset" class="btn btn-secondary" id="reset">Reset</button>
+            </div>
+        </div>
     </form>
+
     <div id="messages">
         <div id="error"></div>
         <div id="warning"></div>
