@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@utility input {
+  @apply !outline-base-content/10 !outline-offset-0 focus:outline-4 focus:border-base-content/50;
+}
+
+@utility btn-info {
+  @apply !outline-info/20 !outline-offset-0 focus:outline-4;
+}
+
+@utility btn-error {
+  @apply !outline-error/20 !outline-offset-0 focus:outline-4;
+}

@@ -3,7 +3,7 @@ console.log("SW loaded")
 console.log(chrome.runtime.onMessage.addListener)
 
 // Listen for messages from content scripts
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((_request, sender, sendResponse) => {
   console.log("Message received")
 
   // Show the action icon for the tab that the sender (content script) was on
