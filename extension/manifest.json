@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "AlmaMedia",
   "description": "Calcola la tua media pesata da AlmaEsami con un semplice click!",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "icons": { "16": "icon32.png", "48": "icon96.png", "128": "icon256.png" },
   "action": {
     "default_title": "Clicca qui per conoscere la tua media",
