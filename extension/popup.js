@@ -8,7 +8,6 @@ function showResults() {
 }
 
 function showInfo() {
-  console.log("showInfo")
   $("#results").hide()
   $("#info").show()
 }

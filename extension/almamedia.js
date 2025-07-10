@@ -3,7 +3,7 @@
   grade = grade.replace("e lode", "") // remove 'e lode' if present
   grade = grade.replace(/^\s+|\s+$/, "") // trim
 
-  return grade
+  return isNaN(Number(grade)) ? grade : Number(grade)
 }
 
 function normalizeName(name) {
@@ -15,15 +15,18 @@ function getExamRows() {
   return $("table.iceDataTblOutline").find("tr.riga0, tr.riga1")
 }
 
+const NAME_REGEX_IT = /(?<=Piano di studi - ).*?(?= \()/
+const NAME_REGEX_EN = /(?<=Study plan ).*?(?= \()/
+
 function getStudentName() {
-  try {
-    var titoloContent = $(".titoloPagina").text()
-    var start = titoloContent.indexOf("-") + 1
-    var end = titoloContent.indexOf("(Matr.")
-    return titoloContent.substr(start, end - start).trim()
-  } catch (err) {
-    return "Studente"
-  }
+  const titleContent = $(".titoloPagina").text()
+  // Test against the italian regex
+  const itMatch = titleContent.match(NAME_REGEX_IT)?.[0]
+  if (itMatch) return itMatch
+  // Test against the english regex
+  const enMatch = titleContent.match(NAME_REGEX_EN)?.[0]
+  if (enMatch) return enMatch
+  return "Studente"
 }
 
 function getCareer() {
@@ -32,14 +35,14 @@ function getCareer() {
   if (rows.length == 0) return null
 
   var studentName = getStudentName()
-  console.log(studentName)
+
   var career = new Career(studentName)
   for (var i = 0; i < rows.length; i++) {
     var columns = $(rows.get(i)).children(".colonna")
 
     if (columns != null && columns.length >= 6) {
       /*var name = $(columns.get(2)).html().trim();*/
-      var credits = $(columns.get(4)).html()
+      var credits = Number($(columns.get(4)).html())
       var grade = $(columns.get(5)).html()
 
       // We take into consideration only the grades that are "Verbalizzato" or "Riconosciuto"

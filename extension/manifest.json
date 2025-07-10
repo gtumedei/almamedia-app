@@ -19,5 +19,5 @@
     }
   ],
   "permissions": ["activeTab"],
-  "host_permissions": ["https://*.unibo.it/*"]
+  "host_permissions": ["file:///*", "https://*.unibo.it/*"]
 }

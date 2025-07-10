@@ -2,7 +2,7 @@
 
 /*********** EXAM *************************/
 function Exam(credits) {
-  this.credits = eval(credits)
+  this.credits = credits
   this.grade = null // we set null if the exam has not been passed, the grade can be a number or a string (like ID)
 }
 
@@ -36,12 +36,12 @@ Career.prototype.getMedia = function () {
   var creditsSum = 0
   for (var i = 0; i < this.exams.length; i++) {
     if (this.exams[i].isPassed() && this.exams[i].isGradeNumber()) {
-      gradesSum += eval(this.exams[i].grade * this.exams[i].credits)
-      creditsSum += eval(this.exams[i].credits)
+      gradesSum += this.exams[i].grade * this.exams[i].credits
+      creditsSum += this.exams[i].credits
     }
   }
   var media = 0
-  if (creditsSum > 0) media = eval(gradesSum / creditsSum)
+  if (creditsSum > 0) media = gradesSum / creditsSum
   return media.toFixed(2)
 }
 
@@ -49,7 +49,7 @@ Career.prototype.getCFU = function () {
   var creditsSum = 0
   for (var i = 0; i < this.exams.length; i++) {
     if (this.exams[i].isPassed()) {
-      creditsSum += eval(this.exams[i].credits)
+      creditsSum += this.exams[i].credits
     }
   }
   return creditsSum
