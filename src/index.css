@@ -3,7 +3,7 @@
 @plugin "daisyui";
 
 @utility input {
-  @apply !outline-base-content/10 !outline-offset-0 focus:outline-4 focus:border-base-content/50;
+  @apply !outline-base-content/10 !outline-offset-0 focus-within:outline-4 focus-within:border-base-content/50;
 }
 
 @utility btn-info {

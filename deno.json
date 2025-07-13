@@ -1,0 +1,29 @@
+{
+  "tasks": {
+    "dev": "deno run -A npm:vite build --watch",
+    "build": "deno run -A npm:vite build",
+    "check": "deno check src/ && deno lint src/"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "lib": ["deno.ns", "ES2020", "DOM", "DOM.Iterable"],
+    "types": ["npm:vite/client", "npm:@types/chrome", "npm:unplugin-icons/types/solid"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "solid-js"
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@iconify-json/tabler": "npm:@iconify-json/tabler@^1.2.19",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.11",
+    "@types/chrome": "npm:@types/chrome@^0.0.329",
+    "@types/node": "npm:@types/node@^24.0.10",
+    "daisyui": "npm:daisyui@^5.0.46",
+    "solid-js": "npm:solid-js@^1.9.7",
+    "tailwindcss": "npm:tailwindcss@^4.1.11",
+    "typescript": "npm:typescript@^5.8.3",
+    "unplugin-icons": "npm:unplugin-icons@^22.1.0",
+    "vite": "npm:vite@^7.0.2",
+    "vite-plugin-solid": "npm:vite-plugin-solid@^2.11.7",
+    "~/": "./src/"
+  }
+}

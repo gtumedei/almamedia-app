@@ -1,15 +1,19 @@
+import deno from "@deno/vite-plugin"
 import tailwind from "@tailwindcss/vite"
 import { defineConfig } from "vite"
 import solid from "vite-plugin-solid"
-import path from "path"
+import icons from "unplugin-icons/vite"
 
 export default defineConfig({
-  plugins: [solid(), tailwind()],
+  plugins: [deno(), solid(), tailwind(), icons({ compiler: "solid" })],
+  resolve: {
+    alias: [{ find: "~", replacement: "/src" }],
+  },
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, "index.html"),
-        worker: path.resolve(__dirname, "src/worker.ts"),
+        main: import.meta.resolve("./index.html"),
+        // worker: import.meta.resolve("./src/worker.ts"),
       },
       output: {
         entryFileNames: (chunkInfo) => {
