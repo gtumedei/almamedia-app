@@ -14,10 +14,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["file:///*", "https://*.unibo.it/*"],
+      "matches": ["file:///*", "https://almaesami.unibo.it/*"],
       "js": ["jquery-1.9.1.js", "datatypes.js", "almamedia.js"]
     }
   ],
   "permissions": ["activeTab"],
-  "host_permissions": ["file:///*", "https://*.unibo.it/*"]
+  "host_permissions": ["file:///*", "https://almaesami.unibo.it/*"]
 }
